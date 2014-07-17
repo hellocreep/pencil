@@ -10,10 +10,14 @@ $(function() {
   pencil = new Pencil();
   window.pencil = pencil;
 
-
+  $('.js-set').on('click', function() {
+    pencil.set($(this).data('pencil'));
+  });
 
   $('.js-pencil-play').on('click', function() {
     pencil.play();
   });
+
+
 });
 })(jQuery);
