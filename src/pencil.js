@@ -171,6 +171,11 @@
         strokeStyle: '#333',
         lineCap: 'round',
         lineWidth: 10
+      },
+      one: {
+        strokeStyle: '#333',
+        lineCap: 'round',
+        lineWidth: 3
       }
     }
   }
