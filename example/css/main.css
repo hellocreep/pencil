@@ -97,11 +97,53 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-#canvas {
+#wrap {
+    overflow: hidden;
 }
 
+.title {
+    text-align: center;
+    color: #ddd;
+    margin: 10px 0;
+}
 
+#footer {
+    height: 50px;
+    position: relative;
+    background-color: #ddd;
+}
 
+.pencilbox {
+    position: absolute;
+    background-color: #ddd;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.arrow {
+    display: block;
+    position: relative;
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+.arrow:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 15px 10px;
+    border-color: transparent transparent #6C79FF transparent;
+    position: absolute;
+    left: 48%;
+    top: 5px;
+}
+
+.arrow.down:after {
+    border-width: 15px 10px 0 10px;
+    border-color: #6C79FF transparent transparent transparent;
+}
 
 
 

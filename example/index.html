@@ -21,17 +21,33 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div>
-            <button type="button" class="js-pencil-play">Play</button>
-        </div>
-        <div>
-            <a href="javascript:;" class="js-set" data-pencil="original">Original</a>
-            <a href="javascript:;" class="js-set" data-pencil="fat">Fat</a>
-            <a href="javascript:;" class="js-set" data-pencil="thin">Thin</a>
-        </div>
-
         <!-- Add your site or application content here -->
-        <canvas id="canvas" width="300" height="500"></canvas>
+        <main id="wrap">
+            <h1 id="header" class="title">Draw Something</h1>
+            <div class="paper">
+                <canvas id="canvas" width="300" height="500"></canvas>
+            </div>
+            <footer id="footer">
+                <div class="pencilbox">
+                    <i class="arrow js-toggle-box"></i>
+                    <button type="button" class="js-pencil-play">Play</button>
+                    <ul>
+                        <li>
+                            <a href="javascript:;" class="js-set" data-pencil="original">Original</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="js-set" data-pencil="fat">Fat</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="js-set" data-pencil="thin">Thin</a>
+                        </li>
+                        <!-- <li>
+                            <a href="javascript:;" class="js-set" data-pencil="one">Pencil one</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </footer>
+        </main>
 
         <script src="js/vendor/jquery-1.10.2.min.js"></script>
         <script src="js/pencil.min.js"></script>
