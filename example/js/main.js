@@ -7,7 +7,7 @@ $(function() {
     height: $win.height()
   });
 
-  pencil = new Pencil();
+  pencil = new Pencil('canvas');
   window.pencil = pencil;
 
   $('.js-set').on('click', function() {

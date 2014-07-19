@@ -9,15 +9,11 @@
 
     this.opts = defaults;
 
-    var paperName = paper || 'canvas';
+    var el = document.getElementById(paper);
 
-    var el = document.getElementById(paperName);
-
-    var paper = el.getContext('2d');
+    this.paper = el.getContext('2d');
 
     this.el = el;
-
-    this.paper = paper;
 
     this.started = false;
 
@@ -78,10 +74,15 @@
   Pencil.prototype.draw = function(target) {
     var self = this;
 
-    console.log(target)
     if(this.started) {
-      var offsetX = this.isTouch ? target.touches[0].pageX : target.offsetX;
-      var offsetY = this.isTouch ? target.touches[0].pageY : target.offsetY;
+      var offsetX, offsetY;
+      if(this.isTouch) {
+        offsetX = target.touches[0].pageX - this.el.getBoundingClientRect().left;
+        offsetY = target.touches[0].pageY - this.el.getBoundingClientRect().top;
+      } else {
+        offsetX = target.offsetX;
+        offsetY = target.offsetY;
+      }
       this.trace.push({
         x: offsetX,
         y: offsetY
@@ -130,6 +131,7 @@
 
   Pencil.prototype.play = function() {
     this.clear();
+    this.backUpTrace = this.trace;
     this._draw();
   }
 
@@ -154,7 +156,6 @@
   }
 
   Pencil.DEFAULTS = {
-    paper: 'canvas',
     brush: {
       original: {
         strokeStyle: '#333',
